@@ -19,7 +19,9 @@ const [pacientes,setPacientes] = useState([])
      setPacientes = {setPacientes}
      
      />
-     <ListadoPacientes/>
+     <ListadoPacientes
+     pacientes = {pacientes}
+     />
      </div>
      
      
