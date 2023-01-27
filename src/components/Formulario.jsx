@@ -1,12 +1,24 @@
 import {useState,useEffect} from 'react'
 import Error from './Error'
-function Formulario({pacientes,setPacientes}) {
+function Formulario({pacientes,setPacientes,paciente}) {
   const [nombre,setNombre] = useState('')
   const [propietario,setPropietario] = useState('')
   const [email,setEmail] = useState('')
   const [fecha,setFecha] = useState('')
   const [sintomas,setSintomas] = useState('')
   const [error,setError] = useState(false)
+
+  useEffect(()=>{
+    if(Object.keys(paciente).length >0){
+      console.log(paciente)
+      setNombre(paciente.nombre)
+      setPropietario(paciente.propietario)
+      setEmail(paciente.email)
+      setFecha(paciente.fecha)
+      setSintomas(paciente.sintomas)
+      
+    }
+  },[paciente])
 
 
 
@@ -34,7 +46,7 @@ function Formulario({pacientes,setPacientes}) {
       error,
       id: generarId()
     }
-    console.log(ObjetoPaciente)
+    
     setPacientes([...pacientes,ObjetoPaciente])
 
     //Reiniciar el form
