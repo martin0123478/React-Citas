@@ -19,6 +19,7 @@ const [paciente,setPaciente] = useState({})
      pacientes = {pacientes}
      setPacientes = {setPacientes}
      paciente = {paciente}
+     setPaciente={setPaciente}
      
      />
      <ListadoPacientes
